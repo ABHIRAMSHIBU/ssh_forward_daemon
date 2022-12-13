@@ -1,0 +1,15 @@
+[Unit]
+Description=SSH Forward Daemon
+After=network.target
+StartLimitIntervalSec=1
+
+[Service]
+EnvironmentFile=/opt/SSHForwardD/env
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/opt/SSHForwardD/run.sh
+
+[Install]
+WantedBy=multi-user.target
